@@ -22,5 +22,14 @@
   "privatePods": {
     "repository": "https://github.com/zhangguozhong/aeris-sdk.git",
     "tag": "0.25.0"
+  },
+  "publication": {
+    "state": "partial-preview",
+    "npm": {
+      "aeris-client-core": "0.25.0",
+      "aeris-react-native": "0.25.0"
+    },
+    "specsRepository": "https://github.com/zhangguozhong/leo-podspecs.git",
+    "otherPlatformRegistries": "not-published"
   }
 }

@@ -2,7 +2,7 @@
 
 Aeris 为 iOS 宿主中的 Web、React Native、Flutter 和 Unity 模块提供统一桥接协议、原生能力注册、callback、持续回调及事件订阅。
 
-当前源码为 **0.25.0 发布候选**。npm、Pod 及 tag 的发布状态应以实际 registry 和 Git tag 为准。当前验证以 iOS 为主，未声明 Android 实现已经完成。
+**0.25.0 Core/RN 预览版已发布**：npm aeris-client-core@0.25.0、aeris-react-native@0.25.0；原生 Specs 位于 [leo-podspecs](https://github.com/zhangguozhong/leo-podspecs)，源码 tag 为 0.25.0。当前验证以 iOS 为主，未声明 Android 实现已经完成。aeris.json 的全套 published=false 表示其他平台 registry 尚未全部发布，已发布范围见 publication。
 
 ## React Native 与原生接入
 
@@ -47,3 +47,5 @@ Web、Flutter、Unity 的客户端和 iOS 插件源码分别位于 packages/web�
 ## 许可
 
 MIT。此公开源码仓库仅保留发布源码与使用说明，不包含内部设计文档、测试日志和私有开发仓库历史。
+
+首轮 npm 发布同时生成 next 与 latest，建议按上文精确版本安装。公开 Specs 不依赖 Trunk 账号。
