@@ -4,7 +4,7 @@ RN 插件包含 JS 入口、RN Adapter、Codegen 规范和薄 iOS 原生模块�
 
 ## 1. 安装 JS 和插件包
 
-当前未发布 npm registry，推荐使用维护者从 `0.25.0` tag 生成的两个 tarball。将它们放入 RN 项目，例如：
+使用 npm 精确安装 `aeris-client-core@0.25.0` 与 `aeris-react-native@0.25.0`。发布前验收或离线接入也可使用同版本的两个 tarball，例如：
 
 ```text
 RNFeature/
