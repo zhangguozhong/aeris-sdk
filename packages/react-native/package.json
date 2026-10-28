@@ -1,0 +1,56 @@
+{
+  "name": "aeris-react-native",
+  "version": "0.25.0",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md",
+    "ios",
+    "AerisRN.podspec"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "react-native": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
+  },
+  "dependencies": {
+    "aeris-client-core": "0.25.0"
+  },
+  "react-native": "./dist/index.js",
+  "peerDependencies": {
+    "react-native": "0.87.x",
+    "react": "^19.2.3"
+  },
+  "codegenConfig": {
+    "name": "NativeUnifiedBridgeSpec",
+    "type": "modules",
+    "jsSrcsDir": "src/specs"
+  },
+  "devDependencies": {
+    "@react-native/codegen": "0.87.0",
+    "typescript": "5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangguozhong/aeris-sdk.git",
+    "directory": "packages/react-native"
+  },
+  "homepage": "https://github.com/zhangguozhong/aeris-sdk",
+  "bugs": {
+    "url": "https://github.com/zhangguozhong/aeris-sdk/issues"
+  }
+}

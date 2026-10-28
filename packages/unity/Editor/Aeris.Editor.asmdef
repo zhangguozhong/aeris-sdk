@@ -1,0 +1,6 @@
+{
+  "name": "Aeris.Editor",
+  "rootNamespace": "Aeris.Editor",
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

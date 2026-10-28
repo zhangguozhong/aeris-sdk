@@ -1,0 +1,5 @@
+<linker>
+  <assembly fullname="Aeris.Runtime">
+    <type fullname="Aeris.AerisIOSNativeWire" preserve="all" />
+  </assembly>
+</linker>

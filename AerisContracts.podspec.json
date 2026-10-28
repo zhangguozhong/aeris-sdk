@@ -1,0 +1,28 @@
+{
+  "name": "AerisContracts",
+  "module_name": "AerisContracts",
+  "version": "0.25.0",
+  "summary": "Minimal Foundation message ingress contracts for Aeris platform plugins",
+  "homepage": "https://github.com/zhangguozhong/aeris-sdk",
+  "license": {
+    "type": "MIT",
+    "file": "native/ios/contracts/LICENSE"
+  },
+  "authors": "Aeris",
+  "source": {
+    "git": "https://github.com/zhangguozhong/aeris-sdk.git",
+    "tag": "0.25.0"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "source_files": [
+    "native/ios/contracts/Sources/**/*.{h,m}"
+  ],
+  "public_header_files": [
+    "native/ios/contracts/Sources/*.h"
+  ],
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  }
+}

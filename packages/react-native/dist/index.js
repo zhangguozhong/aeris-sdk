@@ -1,0 +1,11 @@
+import NativeUnifiedBridge from './specs/NativeUnifiedBridge.js';
+import { ClientCore } from 'aeris-client-core/ClientCore';
+import { RNAdapter } from './RNAdapter.js';
+// RN Bridge SDK 由 Client Core 与 RN Adapter 组合而成。
+export function createBridge(options = {}, onCallbackError) {
+    return new ClientCore(new RNAdapter(NativeUnifiedBridge), onCallbackError, options);
+}
+// 每个 RN 运行时选择默认或配置后的实例，仅连接一个所有者。
+export const bridge = createBridge();
+export { ClientCore } from 'aeris-client-core/ClientCore';
+export { BridgeDiagnostics } from 'aeris-client-core/diagnostics';

@@ -1,0 +1,95 @@
+{
+  "name": "Aeris",
+  "module_name": "Aeris",
+  "version": "0.25.0",
+  "summary": "Shared Native bridge engine with isolated container connections",
+  "homepage": "https://github.com/zhangguozhong/aeris-sdk",
+  "license": {
+    "type": "MIT",
+    "file": "native/ios/aeris/LICENSE"
+  },
+  "authors": "Aeris",
+  "source": {
+    "git": "https://github.com/zhangguozhong/aeris-sdk.git",
+    "tag": "0.25.0"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "6.0",
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": [
+        "native/ios/aeris/Sources/Core/**/*.swift",
+        "native/ios/aeris/Sources/Invocation/**/*.{h,m}"
+      ],
+      "public_header_files": [
+        "native/ios/aeris/Sources/Invocation/include/*.h"
+      ],
+      "dependencies": {
+        "AerisContracts": [
+          "= 0.25.0"
+        ]
+      }
+    },
+    {
+      "name": "Transports",
+      "source_files": [
+        "native/ios/aeris/Sources/Transports/**/*.swift"
+      ],
+      "dependencies": {
+        "Aeris/Core": []
+      }
+    },
+    {
+      "name": "UIKitContext",
+      "source_files": [
+        "native/ios/aeris/Sources/UIKitContext/**/*.swift"
+      ],
+      "frameworks": "UIKit",
+      "dependencies": {
+        "Aeris/Core": []
+      }
+    },
+    {
+      "name": "SystemEventSources",
+      "source_files": [
+        "native/ios/aeris/Sources/SystemEventSources/**/*.swift"
+      ],
+      "frameworks": [
+        "Network",
+        "UIKit"
+      ],
+      "dependencies": {
+        "Aeris/UIKitContext": []
+      }
+    },
+    {
+      "name": "WebKitBridge",
+      "source_files": [
+        "native/ios/aeris/Sources/WebKitBridge/**/*.swift"
+      ],
+      "frameworks": [
+        "WebKit",
+        "UIKit"
+      ],
+      "dependencies": {
+        "Aeris/Transports": [],
+        "Aeris/UIKitContext": []
+      }
+    },
+    {
+      "name": "UnityBridge",
+      "source_files": [
+        "native/ios/aeris/Sources/UnityBridge/**/*.swift"
+      ],
+      "dependencies": {
+        "Aeris/Transports": [],
+        "Aeris/UIKitContext": []
+      }
+    }
+  ],
+  "swift_version": "6.0"
+}

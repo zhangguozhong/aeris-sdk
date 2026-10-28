@@ -1,0 +1,26 @@
+{
+  "name": "Aeris",
+  "version": "0.25.0",
+  "documentationVersion": "1.48",
+  "compatibilityBaseline": "0.22.0",
+  "published": false,
+  "nativePods": [
+    "native/ios/contracts/AerisContracts.podspec",
+    "native/ios/aeris/Aeris.podspec",
+    "native/ios/host/AerisHost.podspec"
+  ],
+  "clientPackages": [
+    "packages/client-core",
+    "packages/react-native",
+    "packages/flutter",
+    "packages/web",
+    "packages/unity"
+  ],
+  "wireIdentifiersChanged": false,
+  "revision": "public-release-candidate",
+  "updatedAt": "2026-10-28",
+  "privatePods": {
+    "repository": "https://github.com/zhangguozhong/aeris-sdk.git",
+    "tag": "0.25.0"
+  }
+}

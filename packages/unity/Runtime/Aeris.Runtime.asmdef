@@ -1,0 +1,8 @@
+{
+  "name": "Aeris.Runtime",
+  "rootNamespace": "Aeris",
+  "references": [
+    "Unity.Newtonsoft.Json"
+  ],
+  "autoReferenced": true
+}

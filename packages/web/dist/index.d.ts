@@ -1,0 +1,15 @@
+import { ClientCore } from 'aeris-client-core/ClientCore';
+import type { WebChannel } from './WebChannel.js';
+import type { ClientOptions } from 'aeris-client-core/flowControl';
+export declare function createBridge(options?: ClientOptions, onCallbackError?: (error: unknown) => void): ClientCore;
+export declare function createBridgeWithChannel(channel: WebChannel, options?: ClientOptions, onCallbackError?: (error: unknown) => void): ClientCore;
+export { WebAdapter } from './WebAdapter.js';
+export { LegacyWebChannel } from './LegacyWebChannel.js';
+export type { WebPort } from './LegacyWebChannel.js';
+export type { WebChannel } from './WebChannel.js';
+export declare const bridge: ClientCore;
+export { ClientCore } from 'aeris-client-core/ClientCore';
+export { BridgeDiagnostics } from 'aeris-client-core/diagnostics';
+export type { DiagnosticOptions, DiagnosticRecord, DiagnosticSnapshot, } from 'aeris-client-core/diagnostics';
+export type { ClientOptions, FlowLimits } from 'aeris-client-core/flowControl';
+export type { BridgeError, Completion, CallHandle, CallOptions, CallCallbacks, Subscription, } from 'aeris-client-core/protocol';

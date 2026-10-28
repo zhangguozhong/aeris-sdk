@@ -1,0 +1,39 @@
+{
+  "name": "aeris-web",
+  "version": "0.25.0",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
+  },
+  "dependencies": {
+    "aeris-client-core": "0.25.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangguozhong/aeris-sdk.git",
+    "directory": "packages/web"
+  },
+  "homepage": "https://github.com/zhangguozhong/aeris-sdk",
+  "bugs": {
+    "url": "https://github.com/zhangguozhong/aeris-sdk/issues"
+  }
+}

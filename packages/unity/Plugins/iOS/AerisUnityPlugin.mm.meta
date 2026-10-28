@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 638c6942500d4698a9d0a7b81c93dd71
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any:
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      iPhone: iOS
+    second:
+      enabled: 0
+      settings: {}
+  userData: 由 Aeris iOS 导出处理器加入 UnityFramework，禁止自动重复编译
+  assetBundleName:
+  assetBundleVariant:

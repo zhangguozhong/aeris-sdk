@@ -1,0 +1,89 @@
+{
+  "name": "AerisHost",
+  "module_name": "AerisHost",
+  "version": "0.25.0",
+  "summary": "Container-scoped native host integration for Aeris",
+  "homepage": "https://github.com/zhangguozhong/aeris-sdk",
+  "license": {
+    "type": "MIT",
+    "file": "native/ios/host/LICENSE"
+  },
+  "authors": "Aeris",
+  "source": {
+    "git": "https://github.com/zhangguozhong/aeris-sdk.git",
+    "tag": "0.25.0"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "6.0",
+  "default_subspecs": "Common",
+  "subspecs": [
+    {
+      "name": "Common",
+      "source_files": [
+        "native/ios/host/Sources/Common/**/*.swift"
+      ],
+      "dependencies": {
+        "Aeris/Transports": [
+          "= 0.25.0"
+        ]
+      }
+    },
+    {
+      "name": "ReactNative",
+      "source_files": [
+        "native/ios/host/Sources/ReactNative/**/*.swift"
+      ],
+      "dependencies": {
+        "AerisHost/Common": [],
+        "Aeris/UIKitContext": [
+          "= 0.25.0"
+        ],
+        "AerisRN": [
+          "= 0.25.0"
+        ]
+      }
+    },
+    {
+      "name": "Flutter",
+      "source_files": [
+        "native/ios/host/Sources/Flutter/**/*.swift"
+      ],
+      "dependencies": {
+        "AerisHost/Common": [],
+        "Aeris/UIKitContext": [
+          "= 0.25.0"
+        ],
+        "aeris_flutter": [
+          "= 0.25.0"
+        ]
+      }
+    },
+    {
+      "name": "Web",
+      "source_files": [
+        "native/ios/host/Sources/Web/**/*.swift"
+      ],
+      "dependencies": {
+        "AerisHost/Common": [],
+        "Aeris/WebKitBridge": [
+          "= 0.25.0"
+        ]
+      }
+    },
+    {
+      "name": "Unity",
+      "source_files": [
+        "native/ios/host/Sources/Unity/**/*.swift"
+      ],
+      "dependencies": {
+        "AerisHost/Common": [],
+        "Aeris/UnityBridge": [
+          "= 0.25.0"
+        ]
+      }
+    }
+  ],
+  "swift_version": "6.0"
+}

@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 528b2f55b1a84b8586c74615a3717281
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any:
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      iPhone: iOS
+    second:
+      enabled: 0
+      settings: {}
+  userData: 由 Aeris iOS 导出处理器发布公开头，禁止自动重复导入
+  assetBundleName:
+  assetBundleVariant:

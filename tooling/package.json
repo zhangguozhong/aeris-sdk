@@ -1,0 +1,5 @@
+{
+  "name": "aeris-client-verification-tools",
+  "private": true,
+  "dependencies": {"typescript":"5.9.3","@react-native/codegen":"0.87.0","esbuild":"0.25.12"}
+}
