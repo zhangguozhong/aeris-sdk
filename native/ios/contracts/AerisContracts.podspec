@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'AerisContracts'
   s.module_name = 'AerisContracts'
-  s.version = '0.25.0'
+  s.version = '0.26.0-preview.1'
   s.summary = 'Minimal Foundation message ingress contracts for Aeris platform plugins'
   s.homepage = 'https://github.com/zhangguozhong/aeris-sdk'
   s.license = { :type => 'MIT', :file => 'LICENSE' }

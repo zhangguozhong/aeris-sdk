@@ -2,14 +2,14 @@
 
 Unity UPM runtime, its adapter, the embedded iOS native channel and export processor, and opt-in lifecycle samples.
 
-Version 0.25.0 preserves the 0.22.0 wire contract and callback lifecycle.
+Version 0.26.0-preview.1 preserves the 0.22.0 wire contract and callback lifecycle.
 
 ## 通过 UPM 安装
 
 在 Unity Package Manager 中选择 **Add package from git URL**，输入：
 
 ```text
-https://github.com/zhangguozhong/Aeris.git?path=/packages/unity#0.25.0
+https://github.com/zhangguozhong/Aeris.git?path=/packages/unity#0.26.0-preview.1
 ```
 
 也可以在 Unity 项目 `Packages/manifest.json` 的 `dependencies` 中添加：
@@ -17,18 +17,18 @@ https://github.com/zhangguozhong/Aeris.git?path=/packages/unity#0.25.0
 ```json
 {
   "dependencies": {
-    "com.company.aeris": "https://github.com/zhangguozhong/Aeris.git?path=/packages/unity#0.25.0"
+    "com.company.aeris": "https://github.com/zhangguozhong/Aeris.git?path=/packages/unity#0.26.0-preview.1"
   }
 }
 ```
 
-合并到现有 dependencies，保留其他包。`?path=` 指定 UPM 子目录，`#0.25.0` 固定已推送的 tag；这是 Unity 的 Git 包语法，见 [Unity 官方说明](https://docs.unity3d.com/Manual/upm-git.html)。开发机和 CI 的命令行 Git 都需要私有仓库读取权限；GitHub Desktop 已登录不代表 UPM 已有非交互凭据。不要将 token 放入 manifest。提交 manifest 和 `Packages/packages-lock.json`。
+合并到现有 dependencies，保留其他包。`?path=` 指定 UPM 子目录，`#0.26.0-preview.1` 固定已推送的 tag；这是 Unity 的 Git 包语法，见 [Unity 官方说明](https://docs.unity3d.com/Manual/upm-git.html)。开发机和 CI 的命令行 Git 都需要私有仓库读取权限；GitHub Desktop 已登录不代表 UPM 已有非交互凭据。不要将 token 放入 manifest。提交 manifest 和 `Packages/packages-lock.json`。
 
-本地开发可用 Package Manager 的 **Add package from disk** 选择 `packages/unity/package.json`；离线分发可用 **Add package from tarball** 选择维护者生成的 `artifacts/unity/com.company.aeris-0.25.0.tgz`。后者不随 Git 克隆自动下载。当前保持 UPM 名称 `com.company.aeris`，无需建立 UPM registry。
+本地开发可用 Package Manager 的 **Add package from disk** 选择 `packages/unity/package.json`；离线分发可用 **Add package from tarball** 选择维护者生成的 `artifacts/unity/com.company.aeris-0.26.0-preview.1.tgz`。后者不随 Git 克隆自动下载。当前保持 UPM 名称 `com.company.aeris`，无需建立 UPM registry。
 
 要求 Unity `2022.3` 或更新版本；UPM 自动解析声明的 `com.unity.nuget.newtonsoft-json` `3.2.1`。业务程序集若使用 asmdef，添加对 `Aeris.Runtime` 的引用；代码使用 `using Aeris;`。Package Manager 中按需导入 Bridge Demo Sample，才可使用 `Aeris.Samples` 下的示例类。
 
-安装 UPM 后即能在 Unity 中开发 C# 部分；iOS 桥接需导出并编译 UnityFramework，完成下方 App 通道绑定后才能实际收发。Editor 和非 iOS Player 不提供这条原生通道。UPM URL 与宿主 Pod 均固定为 `0.25.0` tag；后续升级时同步更新，避免两边从不同版本取源码。
+安装 UPM 后即能在 Unity 中开发 C# 部分；iOS 桥接需导出并编译 UnityFramework，完成下方 App 通道绑定后才能实际收发。Editor 和非 iOS Player 不提供这条原生通道。UPM URL 与宿主 Pod 均固定为 `0.26.0-preview.1` tag；后续升级时同步更新，避免两边从不同版本取源码。
 
 ## iOS 内置通道
 
@@ -37,13 +37,13 @@ https://github.com/zhangguozhong/Aeris.git?path=/packages/unity#0.25.0
 
 Unity 2022.3 的真实 iOS 导出验证补齐了三项构建处理：撤销 UPM 自动副本的编译归属，仅编译 `Libraries/AerisUnity/AerisUnityPlugin.mm`；为该文件显式开启 ARC、Objective-C 异常与 C++17；按构建配置扩展已有符号导出限制，保留 Aeris 的 C ABI、错误常量和宿主 ObjC 类型；原本无白名单的配置不新增白名单。处理器重复执行保持幂等，消息协议与 C# API 不变。不可仅凭头文件声明的 `visibility(default)` 判断动态符号已导出。
 
-原始 `0.25.0` tag 不包含上述导出修复，使用该 tag 验证真实 Player 时需要回补处理器并重新导出 UnityFramework。宿主对 Unity 自身类型的导出、Data 资源归属及运行时启动仍由宿主的 Unity 工程配置负责，Pod 不接管。模拟器验收不能代替真机与前后台测试。
+原始 `0.26.0-preview.1` tag 不包含上述导出修复，使用该 tag 验证真实 Player 时需要回补处理器并重新导出 UnityFramework。宿主对 Unity 自身类型的导出、Data 资源归属及运行时启动仍由宿主的 Unity 工程配置负责，Pod 不接管。模拟器验收不能代替真机与前后台测试。
 
 1. 安装 UPM 包并独立导出、编译包含通道的 UnityFramework，放入宿主 App，例如 HostApp/Frameworks。App target 正常引用、嵌入和签名，无需把 Unity 源码工程加入 App workspace。
 2. 宿主通过 AerisHost/Unity 或 Aeris/UnityBridge 使用原有 Entry，编译自己的 AppUnityChannel（范本在 examples/ios-host/Unity/AppUnityChannel.swift），通过 AerisUnityChannelAdapter(driver:) 包装后注入 unityChannel 参数。Pods 不导入 UnityFramework，不需要相关安装 hook 或路径变量。
 3. Unity 在主线程创建以下 owner，channel 与 App 一致，等待 ready 后调用现有 Bridge API。
 
-宿主的私有 Git Podfile 见[根 README](../../README.md#私有-git-pod-接入)：显式指定同一 `0.25.0` tag 的 AerisContracts、Aeris/Core 和 AerisHost/Unity。只装这三个 Pod 不能代替 Unity 侧 UPM 安装；UPM 中的原生通道编入 UnityFramework，App 的 Pod 中不再编译一份通道源码。
+宿主的私有 Git Podfile 见[根 README](../../README.md#私有-git-pod-接入)：显式指定同一 `0.26.0-preview.1` tag 的 AerisContracts、Aeris/Core 和 AerisHost/Unity。只装这三个 Pod 不能代替 Unity 侧 UPM 安装；UPM 中的原生通道编入 UnityFramework，App 的 Pod 中不再编译一份通道源码。
 
 ```csharp
 using Aeris;
@@ -64,7 +64,7 @@ owner.Dispose();
 
 PluginImporter 和 C ABI 头文件保持原字节；C# Client Core 仅调整命名空间，公开类型名和行为保持不变；原生插件提供闭包 Factory、AerisUnityReceiverCallbacks 以及新增 Checked NSError API。AppUnityChannel 使用 bindChecked / prepareForUnityUnloadChecked，错误原因通过 AerisUnityBridgeCodeKey 转为 BridgeFailure。标准新接线必须更新 UPM 插件并重新导出/编译 UnityFramework，旧 Framework 仅能继续使用旧接线。Editor 和非 iOS Player 仍明确报告不支持。Aeris 子模块与目录为 UIKitContext、SystemEventSources、WebKitBridge、UnityBridge；0.23.0 项目需更新名字并补通道注入，旧 tag 保留。
 
-文档 1.48 / 包 0.25.0。测试包括纯 Pod 无框架编译、宿主实际适配器编译、真实 C# P/Invoke 往返与关闭回归；不替代真实 IL2CPP Player 和真机卸载验收。
+文档 1.48 / 包 0.26.0-preview.1。测试包括纯 Pod 无框架编译、宿主实际适配器编译、真实 C# P/Invoke 往返与关闭回归；不替代真实 IL2CPP Player 和真机卸载验收。
 
 ## 接收预算、异常断开与诊断
 
@@ -109,3 +109,8 @@ Core 本地致命错误先封闭请求和订阅，再发送已有 bridge.close �
 退订进行中复用任务，true/false 确认均缓存为成功；失败允许同句柄显式重试相同 subscriptionId，不恢复本地监听。示例最多额外重试一次，不自动无限重试。新增 CleanupTests 与实际 P/Invoke 用例验证错误后 Native 清理及同 Wire 新前缀恢复；JS/Dart 还验证关闭发送失败/挂起与同步退订重入。
 
 导出处理器按覆盖/继承和变量引用语义读取工程中 Target/Project 的 `OTHER_LDFLAGS`、`OTHER_LDFLAGS_FRAMEWORK` 和 `EXPORTED_SYMBOLS_FILE`。若限制仅来自外部 xcconfig 或构建命令行，宿主需在自己的导出策略中保留 Aeris 的公共 C/ObjC 符号；处理器不解析外部配置。
+
+## Android真实Player接入
+
+
+本地候选为UPM补充 `com.unity.modules.androidjni` 内置模块依赖，避免干净工程缺少JNI模块；公开包版本与tag未因此发布。Unity线程暂停时，Native发布和清理仍可继续，业务callback等待PlayerLoop恢复；不保证无限排队或强制后台运行。

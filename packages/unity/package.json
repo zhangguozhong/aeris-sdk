@@ -1,11 +1,12 @@
 {
   "name": "com.company.aeris",
-  "version": "0.25.0",
+  "version": "0.26.0-preview.1",
   "displayName": "Aeris",
   "description": "Aeris client runtime and Unity adapter with injectable host message channels.",
   "unity": "2022.3",
   "dependencies": {
-    "com.unity.nuget.newtonsoft-json": "3.2.1"
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.modules.androidjni": "1.0.0"
   },
   "samples": [
     {

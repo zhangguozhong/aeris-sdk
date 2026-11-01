@@ -1,7 +1,7 @@
 {
   "name": "AerisHost",
   "module_name": "AerisHost",
-  "version": "0.25.0",
+  "version": "0.26.0-preview.1",
   "summary": "Container-scoped native host integration for Aeris",
   "homepage": "https://github.com/zhangguozhong/aeris-sdk",
   "license": {
@@ -11,7 +11,7 @@
   "authors": "Aeris",
   "source": {
     "git": "https://github.com/zhangguozhong/aeris-sdk.git",
-    "tag": "0.25.0"
+    "tag": "0.26.0-preview.1"
   },
   "platforms": {
     "ios": "15.0"
@@ -26,7 +26,7 @@
       ],
       "dependencies": {
         "Aeris/Transports": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ]
       }
     },
@@ -38,10 +38,10 @@
       "dependencies": {
         "AerisHost/Common": [],
         "Aeris/UIKitContext": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ],
         "AerisRN": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ]
       }
     },
@@ -53,10 +53,10 @@
       "dependencies": {
         "AerisHost/Common": [],
         "Aeris/UIKitContext": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ],
         "aeris_flutter": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ]
       }
     },
@@ -68,7 +68,7 @@
       "dependencies": {
         "AerisHost/Common": [],
         "Aeris/WebKitBridge": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ]
       }
     },
@@ -80,7 +80,7 @@
       "dependencies": {
         "AerisHost/Common": [],
         "Aeris/UnityBridge": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ]
       }
     }

@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,mm}"
   s.public_header_files = "ios/AerisRNModuleBinding.h", "ios/UBRNModuleBinding.h"
   s.private_header_files = "ios/RCTUnifiedBridge.h"
-  s.dependency "AerisContracts", "= 0.25.0"
+  s.dependency "AerisContracts", "= 0.26.0-preview.1"
   install_modules_dependencies(s)
 end

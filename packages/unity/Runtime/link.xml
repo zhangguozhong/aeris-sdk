@@ -1,5 +1,7 @@
 <linker>
   <assembly fullname="Aeris.Runtime">
     <type fullname="Aeris.AerisIOSNativeWire" preserve="all" />
+    <!-- 前缀通配同时保留 Android 条件编译的 JNI 代理，iOS 不要求存在该嵌套类型。 -->
+    <type fullname="Aeris.AerisAndroidNativeWire*" preserve="all" />
   </assembly>
 </linker>

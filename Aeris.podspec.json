@@ -1,7 +1,7 @@
 {
   "name": "Aeris",
   "module_name": "Aeris",
-  "version": "0.25.0",
+  "version": "0.26.0-preview.1",
   "summary": "Shared Native bridge engine with isolated container connections",
   "homepage": "https://github.com/zhangguozhong/aeris-sdk",
   "license": {
@@ -11,7 +11,7 @@
   "authors": "Aeris",
   "source": {
     "git": "https://github.com/zhangguozhong/aeris-sdk.git",
-    "tag": "0.25.0"
+    "tag": "0.26.0-preview.1"
   },
   "platforms": {
     "ios": "15.0"
@@ -30,7 +30,7 @@
       ],
       "dependencies": {
         "AerisContracts": [
-          "= 0.25.0"
+          "= 0.26.0-preview.1"
         ]
       }
     },

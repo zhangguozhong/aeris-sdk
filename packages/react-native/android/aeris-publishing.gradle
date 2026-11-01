@@ -1,0 +1,41 @@
+// 只生成候选制品到本地目录；此配置不会向远程仓库上传。
+apply plugin: 'maven-publish'
+
+android {
+    publishing {
+        singleVariant('release') { withSourcesJar() }
+    }
+}
+
+def stagingPath = providers.gradleProperty('aerisMavenStagingDir').getOrElse(
+    rootProject.layout.buildDirectory.dir('aeris-maven').get().asFile.absolutePath)
+
+publishing {
+    repositories {
+        maven {
+            name = 'aerisStaging'
+            url = file(stagingPath).toURI()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing.publications {
+        release(MavenPublication) {
+            from components.release
+            groupId = 'com.aeris.sdk'
+            artifactId = project.findProperty('aerisArtifactId') ?: project.name
+            version = '0.26.0-preview.1'
+            pom {
+                name = artifactId
+                description = 'Aeris Android candidate artifact; not a claim of public Maven namespace ownership.'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+            }
+        }
+    }
+}

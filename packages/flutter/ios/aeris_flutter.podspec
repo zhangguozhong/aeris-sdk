@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'aeris_flutter'
-  s.version = '0.25.0'
+  s.version = '0.26.0-preview.1'
   s.summary = 'Fixed Flutter String channel with host-injected Native receiver'
   s.homepage = 'https://docs.flutter.dev/add-to-app'
   s.license = { :type => 'MIT', :file => '../LICENSE' }
@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Classes/*.h'
   s.ios.deployment_target = '15.0'
   s.dependency 'Flutter'
-  s.dependency 'AerisContracts', '= 0.25.0'
+  s.dependency 'AerisContracts', '= 0.26.0-preview.1'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end

@@ -1,23 +1,23 @@
 # aeris-react-native
 
-RN 插件包含 JS 入口、RN Adapter、Codegen 规范和薄 iOS 原生模块；通用 JS 逻辑由独立的 `aeris-client-core` 提供。当前包版本 `0.25.0`，peer 依赖为 React Native `0.87.x`、React `^19.2.3`。其他 RN 版本需要单独验证。
+RN 插件包含 JS 入口、RN Adapter、Codegen 规范和薄 iOS 原生模块；通用 JS 逻辑由独立的 `aeris-client-core` 提供。当前包版本 `0.26.0-preview.1`，peer 依赖为 React Native `0.87.x`、React `^19.2.3`。其他 RN 版本需要单独验证。
 
 ## 1. 安装 JS 和插件包
 
-使用 npm 精确安装 `aeris-client-core@0.25.0` 与 `aeris-react-native@0.25.0`。发布前验收或离线接入也可使用同版本的两个 tarball，例如：
+使用 npm 精确安装 `aeris-client-core@0.26.0-preview.1` 与 `aeris-react-native@0.26.0-preview.1`。发布前验收或离线接入也可使用同版本的两个 tarball，例如：
 
 ```text
 RNFeature/
 ├── package.json
 └── vendor/aeris/
-    ├── aeris-client-core-0.25.0.tgz
-    └── aeris-react-native-0.25.0.tgz
+    ├── aeris-client-core-0.26.0-preview.1.tgz
+    └── aeris-react-native-0.26.0-preview.1.tgz
 ```
 
 在 RN 项目根目录执行一次安装：
 
 ```sh
-npm install --save-exact ./vendor/aeris/aeris-client-core-0.25.0.tgz ./vendor/aeris/aeris-react-native-0.25.0.tgz
+npm install --save-exact ./vendor/aeris/aeris-client-core-0.26.0-preview.1.tgz ./vendor/aeris/aeris-react-native-0.26.0-preview.1.tgz
 ```
 
 同时安装两个包，使 `aeris-react-native` 的精确 Core 依赖在本地得到满足；只安装 RN tarball 会尝试从 registry 寻找 Core。提交 `package.json`、lockfile 和所引用的两个 tarball，保证其他开发机与 CI 能找到同一份文件。
@@ -47,7 +47,7 @@ async function startBridge() {
 ```ruby
 aeris_source = {
   :git => 'https://github.com/zhangguozhong/aeris-sdk.git',
-  :tag => '0.25.0'
+  :tag => '0.26.0-preview.1'
 }
 
 # 放入实际 App target 内；保留 RN 原来的 use_native_modules!、
@@ -73,4 +73,4 @@ npm install /path/to/Aeris/packages/client-core /path/to/Aeris/packages/react-na
 
 RN 和 Core 位于同一仓库的不同子目录，不能将 Unity 的 `?path=/packages/unity` 语法用于 `npm install`。未来如接入私有 npm registry，需要同时发布 Core 和 RN 两个版本；当前无需改变包结构或复制 Core。
 
-维护者打包命令和 `0.25.0` tag 接入方式见[根 README](../../README.md#四端客户端接入)。固定 TurboModule 名仍为 `NativeUnifiedBridge`、原生模块为 `RCTUnifiedBridge`，Codegen 名为 `NativeUnifiedBridgeSpec`，协议及 callback 生命周期保持不变。
+维护者打包命令和 `0.26.0-preview.1` tag 接入方式见[根 README](../../README.md#四端客户端接入)。固定 TurboModule 名仍为 `NativeUnifiedBridge`、原生模块为 `RCTUnifiedBridge`，Codegen 名为 `NativeUnifiedBridgeSpec`，协议及 callback 生命周期保持不变。
