@@ -12,10 +12,10 @@ android {
 
 // 优先复用宿主的唯一 Core；Maven 路径仅在宿主配置了对应固定版本仓库时启用。
 group = "com.aeris.sdk"
-version = "0.26.0-preview.1"
+version = "0.26.0-preview.2"
 val reactNativeVersion = "0.87.0"
 dependencies {
-    api(if (rootProject.findProject(":aeris") != null) project(":aeris") else "com.aeris.sdk:aeris:0.26.0-preview.1")
+    api(if (rootProject.findProject(":aeris") != null) project(":aeris") else "com.aeris.sdk:aeris:0.26.0-preview.2")
     implementation("com.facebook.react:react-android:$reactNativeVersion")
     testImplementation("junit:junit:4.13.2")
 }

@@ -1,6 +1,6 @@
 {
   "name": "aeris-client-core",
-  "version": "0.26.0-preview.1",
+  "version": "0.26.0-preview.2",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -32,5 +32,6 @@
   "homepage": "https://github.com/zhangguozhong/aeris-sdk",
   "bugs": {
     "url": "https://github.com/zhangguozhong/aeris-sdk/issues"
-  }
+  },
+  "description": "Aeris 的 JavaScript/TypeScript 通信核心，支持原生调用、持续回调、事件订阅与取消。"
 }

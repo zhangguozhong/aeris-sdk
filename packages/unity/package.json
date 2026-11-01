@@ -1,8 +1,8 @@
 {
   "name": "com.company.aeris",
-  "version": "0.26.0-preview.1",
+  "version": "0.26.0-preview.2",
   "displayName": "Aeris",
-  "description": "Aeris client runtime and Unity adapter with injectable host message channels.",
+  "description": "Aeris 的 Unity 通信插件，支持 C# 与 iOS/Android 原生宿主双向通信。",
   "unity": "2022.3",
   "dependencies": {
     "com.unity.nuget.newtonsoft-json": "3.2.1",

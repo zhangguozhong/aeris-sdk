@@ -1,6 +1,6 @@
 {
   "name": "aeris-react-native",
-  "version": "0.26.0-preview.1",
+  "version": "0.26.0-preview.2",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "aeris-client-core": "0.26.0-preview.1"
+    "aeris-client-core": "0.26.0-preview.2"
   },
   "react-native": "./dist/index.js",
   "peerDependencies": {
@@ -58,5 +58,6 @@
   "homepage": "https://github.com/zhangguozhong/aeris-sdk",
   "bugs": {
     "url": "https://github.com/zhangguozhong/aeris-sdk/issues"
-  }
+  },
+  "description": "Aeris 的 React Native 通信插件，支持 iOS 和 Android 原生调用与事件订阅。"
 }

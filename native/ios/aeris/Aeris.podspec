@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'Aeris'
   s.module_name = 'Aeris'
-  s.version = '0.26.0-preview.1'
+  s.version = '0.26.0-preview.2'
   s.summary = 'Shared Native bridge engine with isolated container connections'
   s.homepage = 'https://github.com/zhangguozhong/aeris-sdk'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |ss|
     ss.source_files = 'Sources/Core/**/*.swift', 'Sources/Invocation/**/*.{h,m}'
     ss.public_header_files = 'Sources/Invocation/include/*.h'
-    ss.dependency 'AerisContracts', '= 0.26.0-preview.1'
+    ss.dependency 'AerisContracts', '= 0.26.0-preview.2'
   end
   s.subspec 'Transports' do |ss|
     ss.source_files = 'Sources/Transports/**/*.swift'

@@ -1,7 +1,7 @@
 {
   "name": "AerisContracts",
   "module_name": "AerisContracts",
-  "version": "0.26.0-preview.1",
+  "version": "0.26.0-preview.2",
   "summary": "Minimal Foundation message ingress contracts for Aeris platform plugins",
   "homepage": "https://github.com/zhangguozhong/aeris-sdk",
   "license": {
@@ -11,7 +11,7 @@
   "authors": "Aeris",
   "source": {
     "git": "https://github.com/zhangguozhong/aeris-sdk.git",
-    "tag": "0.26.0-preview.1"
+    "tag": "0.26.0-preview.2"
   },
   "platforms": {
     "ios": "15.0"

@@ -1,6 +1,6 @@
 {
   "name": "aeris-web",
-  "version": "0.26.0-preview.1",
+  "version": "0.26.0-preview.2",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -25,7 +25,7 @@
     }
   },
   "dependencies": {
-    "aeris-client-core": "0.26.0-preview.1"
+    "aeris-client-core": "0.26.0-preview.2"
   },
   "repository": {
     "type": "git",
@@ -35,5 +35,6 @@
   "homepage": "https://github.com/zhangguozhong/aeris-sdk",
   "bugs": {
     "url": "https://github.com/zhangguozhong/aeris-sdk/issues"
-  }
+  },
+  "description": "Aeris 的 Web 通信适配器，连接 WKWebView、Android WebView 与原生宿主。"
 }

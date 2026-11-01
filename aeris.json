@@ -1,6 +1,6 @@
 {
   "name": "Aeris",
-  "version": "0.26.0-preview.1",
+  "version": "0.26.0-preview.2",
   "documentationVersion": "1.48",
   "compatibilityBaseline": "0.22.0",
   "published": false,
@@ -18,15 +18,15 @@
   ],
   "wireIdentifiersChanged": false,
   "revision": "public-release-candidate",
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-02",
   "privatePods": {
     "repository": "https://github.com/zhangguozhong/aeris-sdk.git",
-    "tag": "0.26.0-preview.1"
+    "tag": "0.26.0-preview.2"
   },
   "publication": {
     "state": "preview-candidate",
     "npm": {},
-    "sourceTag": "0.26.0-preview.1",
+    "sourceTag": "0.26.0-preview.2",
     "sourceTagRepository": "https://github.com/zhangguozhong/aeris-sdk.git",
     "specsRepository": "https://github.com/zhangguozhong/leo-podspecs.git",
     "otherPlatformRegistries": "git-tag-only"

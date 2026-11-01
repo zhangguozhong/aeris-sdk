@@ -1,7 +1,7 @@
 plugins { `java-library`; `maven-publish` }
 
 group = "com.aeris.sdk"
-version = "0.26.0-preview.1"
+version = "0.26.0-preview.2"
 
 java { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17; withSourcesJar() }
 // 仅用于编译宿主契约；最终 APK 中的唯一类定义由 UnityLibrary 导出提供。

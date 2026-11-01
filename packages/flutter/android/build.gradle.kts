@@ -1,7 +1,7 @@
 plugins { id("com.android.library") }
 
 group = "com.aeris.sdk"
-version = "0.26.0-preview.2"
+version = "0.26.0-preview.3"
 
 android {
     namespace = "com.aeris.sdk.flutter"
@@ -13,7 +13,7 @@ android {
     }
 }
 dependencies {
-    api("com.aeris.sdk:aeris:0.26.0-preview.1")
+    api("com.aeris.sdk:aeris:0.26.0-preview.2")
     testImplementation("junit:junit:4.13.2")
 }
 // 正常 Flutter 构建自动提供 embedding；独立 AGP 验收可显式注入真实官方 JAR。

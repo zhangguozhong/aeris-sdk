@@ -25,10 +25,10 @@ afterEvaluate {
             from components.release
             groupId = 'com.aeris.sdk'
             artifactId = project.findProperty('aerisArtifactId') ?: project.name
-            version = '0.26.0-preview.1'
+            version = '0.26.0-preview.2'
             pom {
                 name = artifactId
-                description = 'Aeris Android candidate artifact; not a claim of public Maven namespace ownership.'
+                description = 'Aeris Android bridge SDK for native host and cross-platform integration.'
                 licenses {
                     license {
                         name = 'MIT License'

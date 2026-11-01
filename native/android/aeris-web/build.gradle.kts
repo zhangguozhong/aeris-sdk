@@ -1,7 +1,7 @@
 plugins { id("com.android.library") }
 
 group = "com.aeris.sdk"
-version = "0.26.0-preview.1"
+version = "0.26.0-preview.2"
 android {
     namespace = "com.aeris.sdk.web"
     compileSdk = 37
@@ -12,7 +12,7 @@ android {
     }
 }
 dependencies {
-    api(if (rootProject.findProject(":aeris") != null) project(":aeris") else "com.aeris.sdk:aeris:0.26.0-preview.1")
+    api(if (rootProject.findProject(":aeris") != null) project(":aeris") else "com.aeris.sdk:aeris:0.26.0-preview.2")
     implementation("androidx.webkit:webkit:1.12.1")
     testImplementation("junit:junit:4.13.2")
 }

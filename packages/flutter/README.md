@@ -1,8 +1,8 @@
 # aeris_flutter
 
-Aeris 的 Dart Client 与 iOS/Android Flutter 插件。插件版本 `0.26.0-preview.2` 配套 Aeris Native `0.26.0-preview.1`，使用 `aeris_bridge` 通道。插件自动注册后，宿主还须为每个 FlutterEngine 绑定独立连接。
+Aeris 的 Dart Client 与 iOS/Android Flutter 插件。插件版本 `0.26.0-preview.3` 配套 Aeris Native `0.26.0-preview.2`，使用 `aeris_bridge` 通道。插件自动注册后，宿主还须为每个 FlutterEngine 绑定独立连接。
 
-这是预览版本。真机、最低系统真机、签名正式安装以及具体商业登录、支付、定位硬件插件仍待验收；请按自己的业务能力与插件组合测试。
+当前为预览版本，请按应用的目标设备和插件组合验证集成。
 
 ## 环境与安装
 
@@ -12,14 +12,14 @@ Dart `>=3.6.0 <4.0.0`、Flutter `>=3.41.0`；iOS 15.0+；Android minSdk 24、com
 dependencies:
   flutter:
     sdk: flutter
-  aeris_flutter: 0.26.0-preview.2
+  aeris_flutter: 0.26.0-preview.3
 ```
 
 ```sh
 flutter pub get
 ```
 
-该声明从 [pub.dev](https://pub.dev/packages/aeris_flutter) 解析插件；不要额外添加 Git、path 或 dependency overrides。应用提交 `pubspec.lock`，宿主同时锁定下面的 Native 版本。
+从 [pub.dev](https://pub.dev/packages/aeris_flutter) 安装插件。应用提交 `pubspec.lock`，宿主同时锁定下面的 Native 版本。
 
 ## 公共原生依赖
 
@@ -31,11 +31,11 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, '15.0'
 ```
 
-插件由 Flutter 自动安装，依赖的 `AerisContracts` 固定为 `0.26.0-preview.1`。需要下面的直接 Native 绑定时，在实际应用 target 内添加：
+插件由 Flutter 自动安装，依赖的 `AerisContracts` 固定为 `0.26.0-preview.2`。需要下面的直接 Native 绑定时，在实际应用 target 内添加：
 
 ```ruby
-pod 'Aeris/UIKitContext', '= 0.26.0-preview.1'
-pod 'Aeris/Transports', '= 0.26.0-preview.1'
+pod 'Aeris/UIKitContext', '= 0.26.0-preview.2'
+pod 'Aeris/Transports', '= 0.26.0-preview.2'
 ```
 
 本预览未提供 SwiftPM 描述；较新 Flutter 应用可按[官方项目级配置](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers)在应用 pubspec 中使用 CocoaPods：
@@ -52,12 +52,12 @@ Android 在当前宿主的依赖仓库配置中加入固定公共 Maven 地址�
 
 ```kotlin
 maven {
-    url = uri("https://raw.githubusercontent.com/zhangguozhong/aeris-maven/0.26.0-preview.1")
+    url = uri("https://raw.githubusercontent.com/zhangguozhong/aeris-maven/0.26.0-preview.2")
     content { includeGroup("com.aeris.sdk") }
 }
 ```
 
-插件会解析 `com.aeris.sdk:aeris:0.26.0-preview.1`。保留 `google()` 和 `mavenCentral()`；无需添加本地 `:aeris` 项目，也无需全局修改 Gradle 仓库。
+插件会解析 `com.aeris.sdk:aeris:0.26.0-preview.2`。保留 `google()` 和 `mavenCentral()`；无需添加本地 `:aeris` 项目，也无需全局修改 Gradle 仓库。
 
 ## 流程一：标准 Flutter App
 

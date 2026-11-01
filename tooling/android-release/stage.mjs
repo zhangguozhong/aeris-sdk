@@ -34,8 +34,8 @@ execFileSync(
 );
 const files = [];
 for (const name of modules) {
-  const directory = path.join(output, 'com/aeris/sdk', name, '0.26.0-preview.1');
-  const base = `${name}-0.26.0-preview.1`;
+  const directory = path.join(output, 'com/aeris/sdk', name, '0.26.0-preview.2');
+  const base = `${name}-0.26.0-preview.2`;
   for (const suffix of [name === 'aeris-unity-channel' ? '.jar' : '.aar', '-sources.jar', '.pom']) {
     const filename = path.join(directory, base + suffix);
     const bytes = fs.readFileSync(filename);
@@ -45,7 +45,7 @@ for (const name of modules) {
       for (const expected of [
         '<groupId>com.aeris.sdk</groupId>',
         `<artifactId>${name}</artifactId>`,
-        '<version>0.26.0-preview.1</version>',
+        '<version>0.26.0-preview.2</version>',
       ]) {
         if (!xml.includes(expected)) throw new Error(`POM 身份不匹配 ${filename}`);
       }

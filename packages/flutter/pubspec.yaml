@@ -1,6 +1,6 @@
 name: aeris_flutter
-description: Unified Bridge Client Core and Flutter Adapter with a thin iOS and Android plugins.
-version: 0.26.0-preview.2
+description: Aeris Flutter 通信插件，提供 Dart Client Core 和 iOS/Android 原生宿主适配。
+version: 0.26.0-preview.3
 environment:
   sdk: '>=3.6.0 <4.0.0'
   flutter: '>=3.41.0'
@@ -16,4 +16,4 @@ flutter:
       ios:
         pluginClass: AerisUnifiedBridgePlugin
 
-repository: https://github.com/zhangguozhong/aeris-sdk/tree/flutter-0.26.0-preview.2/packages/flutter
+repository: https://github.com/zhangguozhong/aeris-sdk/tree/flutter-0.26.0-preview.3/packages/flutter
