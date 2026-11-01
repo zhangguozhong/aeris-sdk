@@ -1,7 +1,6 @@
 name: aeris_flutter
 description: Unified Bridge Client Core and Flutter Adapter with a thin iOS and Android plugins.
-version: 0.26.0-preview.1
-publish_to: none
+version: 0.26.0-preview.2
 environment:
   sdk: '>=3.6.0 <4.0.0'
   flutter: '>=3.41.0'
@@ -16,3 +15,5 @@ flutter:
         pluginClass: AerisUnifiedBridgePlugin
       ios:
         pluginClass: AerisUnifiedBridgePlugin
+
+repository: https://github.com/zhangguozhong/aeris-sdk/tree/flutter-0.26.0-preview.2/packages/flutter

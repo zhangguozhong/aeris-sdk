@@ -20,6 +20,7 @@ final class _PendingCall {
   Timer? startup;
   Timer? gap;
   Future<bool>? _cancellation;
+  bool _nativeCancellationStarted = false;
 
   _PendingCall(this._core, this.id, this.onData, this.onComplete, this.onError);
 
@@ -56,21 +57,25 @@ final class _PendingCall {
     final completion = Completer<bool>();
     // 在 fail/enqueue/cancel 诊断可能重入此句柄前发布状态。
     _cancellation = completion.future;
-    try {
-      completion.complete(_cancel());
-    } catch (error, stack) {
-      completion.completeError(error, stack);
-    }
+    Future<bool>.sync(_cancel).then<void>(
+      completion.complete,
+      onError: (Object error, StackTrace stack) {
+        // 清理确认失败允许重试；先清缓存，业务错误回调内重入也能取得新完成点。
+        if (identical(_cancellation, completion.future)) _cancellation = null;
+        completion.completeError(error, stack);
+      },
+    );
     return completion.future;
   }
 
   Future<bool> _cancel() {
-    if (_core._phase == _Phase.closed ||
-        !_retained ||
-        localTerminal ||
-        (!accepting && !hasProgress)) {
+    if (_core._phase == _Phase.closed) return Future.value(false);
+    // 本地终态只交付一次；之后仅重试同一 Native 目标，不恢复业务请求。
+    if (_nativeCancellationStarted) return _core._requestCancel(id);
+    if (!_retained || localTerminal || (!accepting && !hasProgress)) {
       return Future.value(false);
     }
+    _nativeCancellationStarted = true;
     fail(const BridgeError('CANCELLED', 'Request cancelled'));
     return _core._requestCancel(id);
   }

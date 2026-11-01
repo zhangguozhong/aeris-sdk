@@ -50,14 +50,12 @@ implementation("com.aeris.sdk:aeris:0.26.0-preview.1")
 
 ```yaml
 dependencies:
-  aeris_flutter:
-    git:
-      url: https://github.com/zhangguozhong/aeris-sdk.git
-      ref: 0.26.0-preview.1
-      path: packages/flutter
+  aeris_flutter: 0.26.0-preview.2
 ```
 
-Flutter工具注册iOS/Android插件；宿主从对应Engine取插件并绑定Aeris Engine，最终退出时先关闭连接，再destroy/detach。此版本通过Git分发，未发布pub.dev。
+Flutter 插件通过 pub.dev 分发，配套 Aeris Native `0.26.0-preview.1`。宿主为每个 Engine 绑定独立连接；退出时先关闭连接并等待真实资源清理，再 destroy/detach。
+
+完整平台仓库配置、原生绑定和接入步骤见 [Flutter 插件使用说明](packages/flutter/README.md)。Flutter 专用源码 tag 为 `flutter-0.26.0-preview.2`；其他平台继续使用既有版本和 tag。
 
 ## Unity
 
