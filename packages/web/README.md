@@ -29,4 +29,3 @@ await bridge.dispose();
 Reuse the same channel object for the same physical container. A second active adapter for that object rejects with `DUPLICATE_INIT`; distinct channel objects represent independent containers. Legacy channels additionally enforce ownership by the original port, including when mixing `new WebAdapter(port)` with `new LegacyWebChannel(port)`. Closing a failed duplicate cannot detach the live owner. User call/event callback errors continue to reach Client Core's `onCallbackError` hook.
 
 The [MessagePort example](../../examples/web-page/CustomChannelExample.ts) shows a custom channel without legacy globals. Validate the sender and origin before accepting a port; the host remains responsible for native binding, origin policy, disconnect notification and the lifetime of the physical channel.
-

@@ -23,6 +23,14 @@ npm install --save-exact aeris-react-native@0.26.0-preview.1
 
 自动安装匹配的 `aeris-client-core`。使用RN0.87/React19.2.3及RN官方Podfile/Gradle配置；插件由autolinking注册，宿主注入共享Engine及每容器上下文。iOS原生依赖从上面的公开Specs解析。
 
+Android根工程需要为插件提供宿主的实际node_modules路径（URN脚手架已自动注入）：
+
+```groovy
+// 根build.gradle；monorepo按实际提升后的依赖目录调整。
+ext.aerisNodeModulesDir = file("../node_modules").absolutePath
+```
+
+
 ## Android原生依赖
 
 SDK包名 `com.aeris.sdk`，minSdk24，Java17。宿主根据实际Gradle策略将下列仓库合并到dependencyResolutionManagement或allprojects.repositories：
