@@ -1,7 +1,11 @@
-# aeris-client-core
+# Aeris Client Core
 
-The shared JavaScript ClientCore, PendingCall owner, protocol validation, diagnostics and flow control used by both the RN and Web adapters.
+统一协议、callback、连续过程回调、超时、取消、事件订阅和关闭清理。版本`0.26.0-preview.1`。
 
-Version 0.26.0-preview.1 preserves the 0.22.0 wire contract and callback lifecycle.
+```sh
+npm install --save-exact aeris-client-core@0.26.0-preview.1
+```
 
-Import `ClientCore` and the protocol types from `aeris-client-core`. Supply an adapter implementing `connect`, `send`, and `close`, or use the RN/Web package factories.
+使用`ClientCore`并注入对应平台Adapter；RN/Web共用此包，不重复复制Core。`call`发起请求，Native通过emit发送过程数据，complete/callback结束；订阅通过统一系统方法完成。通道关闭后旧callback和订阅不能复活。
+
+[四端宿主接入](https://github.com/zhangguozhong/aeris-sdk/tree/0.26.0-preview.1/README.md)。MIT。
