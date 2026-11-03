@@ -57,7 +57,7 @@ dependencies:
 
 Flutter 插件通过 pub.dev 分发，配套 Aeris Native `0.26.0-preview.2`。宿主为每个 Engine 绑定独立连接；退出时先关闭连接并等待真实资源清理，再 destroy/detach。
 
-完整平台仓库配置、原生绑定和接入步骤见 [Flutter 插件使用说明](packages/flutter/README.md)。Flutter 专用源码 tag 为 `flutter-0.26.0-preview.3`；其他平台源码 tag 为 `0.26.0-preview.2`。
+完整平台仓库配置、原生绑定和接入步骤见 [Flutter 插件使用说明](packages/flutter/README.md)。Flutter 专用源码 tag 为 `flutter-0.26.0-preview.3`；Native、RN 和 Web 源码 tag 为 `0.26.0-preview.2`，Unity 使用下文的专用 tag。
 
 ## Unity
 
