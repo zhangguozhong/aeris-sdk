@@ -2,7 +2,7 @@
 
 Aeris 是面向 iOS 和 Android 的统一跨平台通信 SDK，连接 Web、React Native、Flutter 和 Unity。支持原生调用、持续回调、事件订阅、取消与按容器隔离的连接。
 
-原生 SDK、JavaScript Core、RN、Web 和 Unity 当前使用 `0.26.0-preview.2`；Flutter 插件使用 `0.26.0-preview.3`，配套同一原生 SDK。
+原生 SDK、JavaScript Core、RN 和 Web 使用 `0.26.0-preview.2`；Unity UPM 包和 Flutter 插件使用 `0.26.0-preview.3`，配套同一原生 SDK。
 
 ## iOS
 
@@ -64,10 +64,12 @@ Flutter 插件通过 pub.dev 分发，配套 Aeris Native `0.26.0-preview.2`。�
 在UPM中添加Git URL：
 
 ```text
-https://github.com/zhangguozhong/aeris-sdk.git?path=/packages/unity#0.26.0-preview.2
+https://github.com/zhangguozhong/aeris-sdk.git?path=/packages/unity#unity-0.26.0-preview.3
 ```
 
 Unity2022.3+。iOS通用通道随UnityFramework编译，App通过AerisHost/Unity及宿主注入接口接线；Android由Java/JNI通道连接宿主Driver。暂停时C#业务回调等待PlayerLoop恢复，Native仍按有界队列处理和清理。卸载前关闭所有Driver并等待Native清理。
+
+Unity 包已包含 C#、双端通道和导出处理器。完整安装、宿主绑定、取消及卸载顺序见 [Unity 插件接入说明](packages/unity/README.md)。
 
 ## Web
 
