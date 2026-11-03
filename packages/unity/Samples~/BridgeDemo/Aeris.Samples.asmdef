@@ -1,0 +1,8 @@
+{
+  "name": "Aeris.Samples",
+  "references": [
+    "Aeris.Runtime",
+    "Unity.Newtonsoft.Json"
+  ],
+  "rootNamespace": "Aeris.Samples"
+}

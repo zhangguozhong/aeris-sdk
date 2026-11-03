@@ -9,3 +9,7 @@ build/
 .kotlin/
 .cxx/
 local.properties
+
+# Unity 示例目录使用 Samples~，必须随 Git UPM 包发布。
+!packages/unity/Samples~/
+!packages/unity/Samples~/**
